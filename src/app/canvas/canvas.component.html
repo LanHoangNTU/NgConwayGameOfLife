@@ -1,7 +1,8 @@
 <div class="container" *ngFor="let row of grid">
     <div
         *ngFor="let cell of row"
-         [class.alive]="cell.isAlive()"
-         (click)="toggleState(cell)">
+        (click)="toggleState(cell)"
+         [ngClass]="cell.state ? 'alive' : 'dead'"
+    >
     </div>
 </div>

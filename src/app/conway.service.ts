@@ -75,12 +75,20 @@ export class GameOFLifeService {
             ].filter(offset => !this.isOutOfBounds(offset.row, offset.col));
         
         return possibleNeighborCoords.map(
-            coords => this.cells[coords.row * coords.col]
-            ).filter(cell => cell.isAlive())
+            coords => this.cells[coords.row * this.cols + coords.col]
+            ).filter(cell => cell.state)
             .length;
     }
 
     isOutOfBounds(row: number, col: number): boolean {
         return row < 0 || this.rows <= row || col < 0 || this.cols <= col;
+    }
+
+    reset() {
+        if (!this.cells) {
+            throw Error('Grid has not yet been initialized.');
+        }
+
+        this.cells.forEach(cell => cell.reset());
     }
 }

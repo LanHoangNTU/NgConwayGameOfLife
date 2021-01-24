@@ -8,10 +8,12 @@ import { GameOFLifeService } from './conway.service';
 })
 export class AppComponent implements OnInit{
   title = 'NgConwayGameOfLife';
+  rows = 50;
+  cols = 50;
 
   constructor(private gameOFLifeService: GameOFLifeService) { } 
 
   ngOnInit(): void {
-    this.gameOFLifeService.initialize();
+    this.gameOFLifeService.initialize(this.rows, this.cols);
   }
 }

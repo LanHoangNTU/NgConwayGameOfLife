@@ -1,5 +1,5 @@
 export class Cell {
-    private state = false;
+    private _state = false;
     private futureState = false;
 
     private _row: number;
@@ -18,8 +18,8 @@ export class Cell {
         return this._col;
     }
 
-    isAlive(): boolean {
-        return this.state;
+    get state(): boolean {
+        return this._state;
     }
 
     setFutureState(state: boolean) {
@@ -27,14 +27,14 @@ export class Cell {
     }
 
     toggleState() {
-        this.state = this.futureState = !this.futureState;
+        this._state = this.futureState = !this.futureState;
     }
 
     updateState() {
-        this.state = this.futureState;
+        this._state = this.futureState;
     }
 
     reset() {
-        this.state = this.futureState = false;
+        this._state = this.futureState = false;
     }
 }
