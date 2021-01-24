@@ -8,6 +8,7 @@ import { ControlsComponent } from './controls/controls.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbButtonModule, NbButtonGroupModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { GameOFLifeService } from './conway.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbButtonModule,
     NbButtonGroupModule
   ],
-  providers: [],
+  providers: [GameOFLifeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,12 +15,13 @@ export class GameOFLifeService {
 
         this.rows = rows;
         this.cols = cols;
-        for (let i = 0; i < rows * cols; i++) {
-            this.cells.push(new Cell(Math.floor(i / this.cols), i % this.cols));       
-        }
+        this.cells;
+        this.cells = Array.from({
+            length: rows * cols
+        }).map((_, i, a) => new Cell(Math.floor(i / this.cols), i % this.cols));
     }
 
-    get Grid(): Cell[][] {
+    get grid(): Cell[][] {
         if(!this.cells)
             throw Error("Grid has not yet benn initialized");
         

@@ -1,3 +1,7 @@
-<div>
-    
+<div class="container" *ngFor="let row of grid">
+    <div
+        *ngFor="let cell of row"
+         [class.alive]="cell.isAlive()"
+         (click)="toggleState(cell)">
+    </div>
 </div>

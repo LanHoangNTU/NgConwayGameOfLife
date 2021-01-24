@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { Cell } from './cell';
+import { GameOFLifeService } from '../conway.service';
 
 @Component({
   selector: 'app-canvas',
@@ -11,9 +13,14 @@ export class CanvasComponent implements OnInit {
   @Input() cols!: number;
   grid?: Cell[][];
 
-  constructor() { }
+  constructor(private gameOFLifeService: GameOFLifeService) { }
 
   ngOnInit(): void {
+    this.grid = this.gameOFLifeService.grid;
+  }
+
+  toggleState(cell: Cell){
+    cell.toggleState();
   }
 
 }
