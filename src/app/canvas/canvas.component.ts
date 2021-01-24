@@ -18,6 +18,7 @@ export class CanvasComponent implements OnInit {
 
   ngOnInit(): void {
     this.grid = this.gameOFLifeService.grid;
+    
   }
 
   toggleState(cell: Cell){

@@ -27,6 +27,11 @@ export class ControlsComponent implements OnInit {
     this._isComputing = false;
   }
 
+  randomize() {
+    this.gameOfLifeService.reset();
+    this.gameOfLifeService.randomizeGrid();
+  }
+
   get isComputing(): boolean {
     return this._isComputing;
   }

@@ -8,6 +8,7 @@ export class GameOFLifeService {
     private cols!: number;
 
     readonly MIN = 5;
+    readonly rngPercent = 1000;
 
     initialize(rows = 10, cols = 10){
         if(rows < this.MIN || cols < this.MIN)
@@ -31,6 +32,16 @@ export class GameOFLifeService {
         }
 
         return grid;
+    }
+
+    randomizeGrid(chances = 0.2) {
+        chances = chances * this.rngPercent;
+
+        this.cells.forEach(cell => {
+            if(Math.random() * this.rngPercent <= chances) {
+                cell.toggleState();
+            }
+        });
     }
 
     updateNextGeneration() {

@@ -2,6 +2,7 @@
     <nb-button-group status="primary">
         <button nbButton [disabled]="isComputing" (click)="start()">Start</button>
         <button nbButton [disabled]="!isComputing" (click)="stop()">Stop</button>
+        <button nbButton (click)="randomize()">Randomize</button>
         <button nbButton (click)="reset()">Reset</button>
     </nb-button-group>
 </div>
