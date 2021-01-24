@@ -1,2 +1,17 @@
-<app-canvas></app-canvas>
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <app-controls></app-controls>
+    <app-canvas></app-canvas>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
