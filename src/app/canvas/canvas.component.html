@@ -1,8 +1,11 @@
-<div class="container" *ngFor="let row of grid">
-    <div
-        *ngFor="let cell of row"
-        (click)="toggleState(cell)"
-         [ngClass]="cell.state ? 'alive' : 'dead'"
-    >
+<div class="center">
+    <div class="container" *ngFor="let row of grid">
+        <div
+            class="cell"
+            *ngFor="let cell of row"
+            (click)="toggleState(cell)"
+            [ngClass]="cell.state ? 'alive' : 'dead'"
+        >
+        </div>
     </div>
 </div>

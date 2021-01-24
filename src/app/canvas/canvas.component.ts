@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Cell } from './cell';
 import { GameOFLifeService } from '../conway.service';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-canvas',

@@ -1,10 +1,13 @@
 .container{
     display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container > div {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     margin-right: 1px;
     margin-bottom: 1px;
 }
@@ -14,5 +17,14 @@
 }
 
 .dead {
-    background-color: cornflowerblue;
+    background-color: darkgray;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding: 5px;
+    background-color: gray;
 }
